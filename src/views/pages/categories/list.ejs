@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../layout/head') %>
+<body>
+	<div class="wrapper">
+		<%- include('../../layout/main-header') %>
+			<%- include('../../layout/side-bar') %>
+			<div class="main-panel">
+				<%- include('../../components/categories/list') %>
+				<%- include('../../layout/footer') %>
+			</div>
+		</div>
+	</div>
+	<%- include('../../components/common/modalCategory') %>
+</body>
+<%- include('../../layout/script/main.ejs') %>
+<%- include('../../layout/script/notifications') %>
+<%- include('../../layout/script/listCategory') %>
+
+</html>

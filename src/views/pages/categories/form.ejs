@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../layout/head') %>
+<body>
+	<div class="wrapper">
+		<%- include('../../layout/main-header') %>
+			<%- include('../../layout/side-bar') %>
+			<div class="main-panel">
+				<%- include('../../components/categories/form') %>
+				<%- include('../../layout/footer') %>
+			</div>
+		</div>
+	</div>
+	<!-- //modal -->
+</body>
+<%- include('../../layout/script/main.ejs') %>
+<script>
+	const mode = '<%=mode%>'
+	if(mode === "Delete"){
+		$(".categoryInput").attr("disabled","disabled");
+	}
+</script>
+</html>

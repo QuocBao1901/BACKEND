@@ -1,0 +1,23 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+  function showNotify(notice, state, style) {
+    var content = {};
+    content.message = notice;
+    content.title = "Notice";
+    if (style == "withicon") {
+      content.icon = "la la-bell";
+    } else {
+      content.icon = "none";
+    }
+    content.url = "index.html";
+    content.target = "_blank";
+
+    $.notify(content, {
+      type: state,
+      placement: {
+        from: "bottom",
+        align: "right",
+      },
+      time: 1000,
+    });
+  }
+</script>

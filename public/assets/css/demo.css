@@ -99,3 +99,36 @@
 .from-show-notify label{
 	padding-top: 0.65rem;
 }
+.category-label{
+	width: 4rem;
+}
+.flex{
+	display: flex;
+}
+.itemscenter{
+	align-items: center;
+}
+.mb-0{
+	margin-bottom: 0px;
+}
+.mb-5{
+	margin-bottom: 5px;
+}
+.mb-1{
+	margin-bottom: 1px;
+}
+.mb-4px{
+	margin-bottom: 0.5rem;
+}
+.hide{
+	display: none;
+}
+.white-space{
+	white-space: nowrap;
+}
+.max-w-10{
+	max-width: 10rem;
+}
+.w-2{
+	width: 2rem;
+}

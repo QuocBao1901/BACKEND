@@ -1,0 +1,71 @@
+<div class="content">
+  <div class="content-fluid">
+    <h4 class="page-title">
+      <% if ( mode==="Create" ) { %>
+      Thêm sản phẩm
+      <% } %>
+      <% if ( mode==="Update" ) { %>
+      Cập nhật sản phẩm
+      <% } %>
+      <% if ( mode==="Delete" ) { %>
+      Bạn có muốn xóa <%=category?.name%> này không?
+      <% } %>
+
+    </h4>
+    <div class="card">
+      <div class="card-body">
+        <% if (mode==="Create" ) { %>
+        <form action="/categories/create" method="post">
+          <% } %>
+          <% if (mode==="Update" ) { %>
+          <form action="/categories/update/<%=category?._id%>" method="post">
+            <!-- <div class="form-group hide">
+              <input name="id" type="text" value="<%=category?._id%>" id="id" />
+            </div> -->
+            <% } %>
+            <% if (mode==="Delete" ) { %>
+            <form action="/categories/delete" method="post">
+              <div class="form-group hide">
+                <input name="id" type="text" value="<%=category?._id%>" id="id" />
+              </div>
+              <% } %>
+              <!-- <div class="form-group has-error has-feedback">
+                <label for="errorInput">Error Input</label>
+                <input type="text" id="errorInput" value="Error" class="form-control" />
+                <small id="emailHelp" class="form-text text-muted">Please provide a valid informations.</small>
+              </div> -->
+              <div class="form-group <%=err?.code && 'has-error has-feedback'%>">
+                <label for="code">Mã sản phẩm</label>
+                <input name="code" type="text" value="<%=category?.code%>" class="form-control categoryInput" id="code" placeholder="Nhập mã sản phẩm" />
+                <small class="form-text text-muted text-danger"><%=err?.code%></small>
+              </div>
+              <div class="form-group <%=err.name && 'has-error has-feedback'%>">
+                <label for="name">Tên sản phẩm</label>
+                <input name="name" type="text" value="<%=category?.name%>" class="form-control categoryInput" id="code" placeholder="Nhập tên sản phẩm" />
+                <small class="form-text text-muted text-danger"><%=err?.name%></small>
+              </div>
+              <div class="form-group <%=err.searchString && 'has-error has-feedback'%>">
+                <label for="searchString">Chuỗi tìm kiếm</label>
+                <input name="searchString" type="text" value="<%=category?.searchString%>" class="form-control categoryInput" id="searchString" placeholder="chuỗi tìm kiếm" />
+                <small class="form-text text-muted text-danger"><%=err?.searchString%></small>
+              </div>
+              <div class="form-group <%=err.image && 'has-error has-feedback'%>">
+                <label for="image">Link hình ảnh</label>
+                <input name="image" type="text" value="<%=category?.image%>" class="form-control categoryInput" id="code" placeholder="Nhập link ảnh" />
+                <small class="form-text text-muted text-danger"><%=err?.image%></small>
+              </div>
+              <div class="card-action">
+                <% if (mode==="Create" ) { %> <button class="btn btn-success" type="Submit">Tạo</button>
+                <% } %>
+                <% if (mode==="Update" ) { %> <button class="btn btn-success" type="Submit">Sửa</button>
+                <% } %>
+                <% if (mode==="Delete" ) { %> <button class="btn btn-danger" type="Submit">Xóa</button>
+                <% } %>
+
+                <a class="btn btn-primary" href="/categories">Trở về trang sản phẩm</a>
+              </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
